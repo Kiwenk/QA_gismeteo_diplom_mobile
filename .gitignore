@@ -1,3 +1,10 @@
+.env.credentials
+.env.local_real_device
+.env.local_emulator
+.env.bstack
+tests/allure-results
+tests/.pytest_cache
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -129,6 +136,10 @@ venv/
 ENV/
 env.bak/
 venv.bak/
+.env.bstack
+.env.local_emulator
+.env.local_real_device
+.env.credentials
 
 # Spyder project settings
 .spyderproject
