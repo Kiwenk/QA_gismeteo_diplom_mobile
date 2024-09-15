@@ -5,8 +5,8 @@ from selene import browser, have, be
 
 
 class GismeteoMethods:
-    def __int__(self):
-        pass
+    def __init__(self):
+        self.city = city
 
     def first_launch(self):
         browser.element((AppiumBy.ID, 'android:id/button1')).click()
