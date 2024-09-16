@@ -6,7 +6,7 @@ from selene import browser, have, be
 
 class GismeteoMethods:
     def __init__(self):
-        self.city = city
+        pass
 
     def first_launch(self):
         browser.element((AppiumBy.ID, 'android:id/button1')).click()
