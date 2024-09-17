@@ -1,5 +1,4 @@
 import allure
-from allure import step
 from appium.webdriver.common.appiumby import AppiumBy
 from selene import browser, have, be
 
@@ -11,47 +10,48 @@ class GismeteoMethods:
     def first_launch(self):
         browser.element((AppiumBy.ID, 'android:id/button1')).click()
 
-    with allure.step('Открываем страницу города через поиск'):
-        def open_city(self, city):
+    def open_city(self, city):
+        with allure.step('Открываем страницу города через поиск'):
             browser.element((AppiumBy.ID, 'ru.gismeteo.gismeteo:id/action_search')).click()
             browser.element((AppiumBy.ID, 'ru.gismeteo.gismeteo:id/search_src_text')).type(f'{city}')
             browser.element((AppiumBy.ID, 'ru.gismeteo.gismeteo:id/text_location_name')).click()
 
-    with allure.step('Проверяем наименование города'):
-        def name_check(self, city):
+    def name_check(self, city):
+        with allure.step('Проверяем наименование города'):
             browser.element((AppiumBy.ID, 'ru.gismeteo.gismeteo:id/text_location_name')).element(
                 (AppiumBy.CLASS_NAME, 'android.widget.TextView')).should(have.text(f'{city}'))
 
-    with allure.step('Проверяем видимость таба'):
-        def app_tab_visibility(self, tab):
+    def app_tab_visibility(self, tab):
+        with allure.step('Проверяем видимость таба'):
             browser.element((AppiumBy.ANDROID_UIAUTOMATOR, f'new UiSelector().text("{tab}")')).should(be.visible)
 
-    with allure.step('Проверяем кликабельность таба'):
-        def app_tab_clickability(self, tab):
+    def app_tab_clickability(self, tab):
+        with allure.step('Проверяем кликабельность таба'):
             browser.element((AppiumBy.ANDROID_UIAUTOMATOR, f'new UiSelector().text("{tab}")')).should(be.clickable)
 
-    with allure.step('Проверяем видимость "More options"'):
-        def more_options_visibility(self):
+    def more_options_visibility(self):
+        with allure.step('Проверяем видимость "More options"'):
             browser.element((AppiumBy.ANDROID_UIAUTOMATOR, 'new UiSelector().description("More options")')).should(
                 be.visible)
-    with allure.step('Проверяем кликабельность "More options"'):
-        def more_options_clickability(self):
+
+    def more_options_clickability(self):
+        with allure.step('Проверяем кликабельность "More options"'):
             browser.element((AppiumBy.ANDROID_UIAUTOMATOR, 'new UiSelector().description("More options")')).should(
                 be.clickable)
 
-    with allure.step('Добавляем город в "Избранное"'):
-        def add_to_favorites(self):
+    def add_to_favorites(self):
+        with allure.step('Добавляем город в "Избранное"'):
             browser.element((AppiumBy.ANDROID_UIAUTOMATOR, 'new UiSelector().description("More options")')).click()
             browser.element((AppiumBy.ANDROID_UIAUTOMATOR, 'new UiSelector().text("Add to favorites")')).click()
             browser.element((AppiumBy.ACCESSIBILITY_ID, 'Navigate up')).click()
 
-    with allure.step('Проверяем наличие города в "Избранное"'):
-        def city_in_favorites(self, city):
+    def city_in_favorites(self, city):
+        with allure.step('Проверяем наличие города в "Избранное"'):
             browser.element(
                 (AppiumBy.ID, 'ru.gismeteo.gismeteo:id/text_location_name')).should(have.text(f'{city}'))
 
-    with allure.step('Добавляем город в "Избранное" на главной странице'):
-        def add_to_favorites_from_main_page(self, city):
+    def add_to_favorites_from_main_page(self, city):
+        with allure.step('Добавляем город в "Избранное" на главной странице'):
             browser.element((AppiumBy.XPATH,
                              '//android.widget.HorizontalScrollView[@resource-id="ru.gismeteo.gismeteo:id/tabTypeList"]/'
                              'android.widget.LinearLayout/android.support.v7.app.a.b[2]')).click()
