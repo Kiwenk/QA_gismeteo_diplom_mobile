@@ -79,7 +79,7 @@ alt="Allure" title="Allure"/></a>
 > После прогона всех тестов в <code>Telegram</code> чат автоматически приходит сообщение с полной информацией о прогоне и ссылкой на <code>Allure</code>
 >
 <p>
-<img title="Отчет в Telegram с помощью бота" src="resources/Telegram_results.png">
+<img title="Отчет в Telegram с помощью бота" src="resources/Telegram_results_new.png">
 </p>
 
 ## :film_projector: Видео прохождения тестов на BrowserStack
