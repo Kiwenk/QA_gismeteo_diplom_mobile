@@ -7,13 +7,7 @@ import file
 def to_driver_options(context):
     options = UiAutomator2Options()
 
-    if context == 'local_emulator':
-        options.set_capability('remote_url', os.getenv('REMOTE_URL'))
-        options.set_capability('deviceName', os.getenv('DEVICE_NAME'))
-        options.set_capability('appWaitActivity', os.getenv('APP_WAIT_ACTIVITY'))
-        options.set_capability('app', file.abs_path_from_project(os.getenv('APP')))
-
-    if context == 'local_real_device':
+    if context == 'local':
         options.set_capability('remote_url', os.getenv('REMOTE_URL'))
         options.set_capability('deviceName', os.getenv('DEVICE_NAME'))
         options.set_capability('appWaitActivity', os.getenv('APP_WAIT_ACTIVITY'))
