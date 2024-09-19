@@ -59,8 +59,8 @@ class GismeteoMethods:
             browser.element((AppiumBy.ID, 'ru.gismeteo.gismeteo:id/search_src_text')).type(f'{city}')
             browser.element((AppiumBy.ID, 'ru.gismeteo.gismeteo:id/text_location_name')).click()
 
-    # поискать как перенести методы в наследуемый класс. Сделать из этого интерфейс для теста
-    # (проблема: не могу перенести параметризацию в родительский класс)
+
+class test_interface_gis(GismeteoMethods):
 
     @allure.description('Проверка работы поиска поиска')
     @allure.severity(allure.severity_level.BLOCKER)
@@ -101,4 +101,4 @@ class GismeteoMethods:
         self.city_in_favorites(city)
 
 
-gis_met = GismeteoMethods()
+methods_gis_test = test_interface_gis()
