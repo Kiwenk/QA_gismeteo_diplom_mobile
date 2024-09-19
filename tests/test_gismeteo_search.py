@@ -1,6 +1,6 @@
 import pytest
 import allure
-from utils.methods_mobile import gis_met
+from utils.methods_mobile import methods_gis_test
 
 
 @allure.feature('Поиск')
@@ -9,4 +9,4 @@ from utils.methods_mobile import gis_met
 @allure.tag('search')
 @pytest.mark.parametrize('city', ['Moscow', 'Beijing', 'Paris', 'Los Angeles', 'Dubai', 'Tokyo'])
 def test_search_check(city):
-    gis_met.check_search(city)
+    methods_gis_test.check_search(city)
